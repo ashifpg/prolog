@@ -160,3 +160,9 @@ parent(Y,Z).
 aunt(X,Z):-
 sister(X,Y),
 parent(Y,Z).
+
+#sum
+
+sum(X,Y):-
+ S is X+Y,
+ write(S).
