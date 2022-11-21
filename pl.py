@@ -28,7 +28,16 @@ fact(N,F):-
 ;
 write('N sould be greater than 0')
 ).
-Run Commandfact(5,R).
+Run Command fact(5,R).
+
+Another:
+fact(0,1).
+fact(X,Y):-
+X1 is X-1,
+fact(X1,Z),
+Y is X*Z.
+
+Input:  fact(3,X).
 
 #DFS in Python
 graph = {
