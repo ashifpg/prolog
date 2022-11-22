@@ -166,3 +166,34 @@ parent(Y,Z).
 sum(X,Y):-
  S is X+Y,
  write(S).
+
+#prime number set
+%prime number
+prime(2):- 
+	write(2).
+prime(X):- 
+	prime(X, 2).
+
+prime(X, Y):- 
+	X =:= Y, 
+	write(' '), 
+	write(X).
+prime(X, Y):- 
+	Z is X mod Y, 
+	Z \== 0, 
+	X \== Y, 
+	prime(X,Y+1).
+prime(X, Y):- 
+	Z is X mod Y, 
+	Z =:= 0, 
+	X \== Y.
+   
+input_prime(N):- 
+	input_prime(N, 2).
+input_prime(N, X):- 
+	N =:= X, prime(X).
+input_prime(N, X):-
+	N > X, prime(X), 
+	W is X + 1, 
+	input_prime(N, W).
+command:input_prime(---)
